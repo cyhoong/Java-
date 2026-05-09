@@ -1,5 +1,6 @@
    //Torbert, e-mail: mr@torbert.com, website: www.mr.torbert.com
 	//version 6.17.2003
+   package Lab10;
 
    import javax.swing.*;
    import java.awt.*;
@@ -15,6 +16,7 @@
       private Graphics myBuffer;
       private Timer t;
       private Polkadot pd;
+      private Polkadot pd2;
       private int xPos, yPos;
        public PolkaDotPanel()
       {
@@ -22,7 +24,8 @@
          myBuffer = myImage.getGraphics();
          myBuffer.setColor(BACKGROUND);
          myBuffer.fillRect(0, 0, FRAME, FRAME);
-         pd = new Polkadot();
+         pd = new Polkadot();//第一個圓點
+         pd2 = new Polkadot(300, 300, 50, Color.GREEN);//第二個圓點
          t = new Timer(1000, new Listener());
          t.start();
       }
@@ -34,12 +37,14 @@
       {
           public void actionPerformed(ActionEvent e)
          {
-         /**************************
-            your code goes here
-         **************************/
-            pd.jump(FRAME, FRAME);
-            pd.draw(myBuffer);
-            
+            myBuffer.setColor(BACKGROUND);
+            myBuffer.fillRect(0, 0, FRAME, FRAME);
+
+            pd.jump(FRAME, FRAME);//第一個圓點移動到隨機位置
+            pd.draw(myBuffer);//第一個圓點畫出來
+
+            pd2.jump(FRAME, FRAME);
+            pd2.draw(myBuffer);
             repaint();
          }
       }
