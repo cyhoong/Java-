@@ -1,8 +1,9 @@
    //Torbert, e-mail: mr@torbert.com, website: www.mr.torbert.com
 	//version 6.17.2003
+   package Lab15;
 
    import javax.swing.JFrame;
-   public class Driver15
+   public class U2Driver15
    {
       public static void main(String[] args)
       { 
